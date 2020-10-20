@@ -1,9 +1,7 @@
 const imageUpload = document.getElementById('imageUpload')
 
-var myVar;
-
 function myFunction() {
-    myVar = setTimeout(showPage, 3000);
+    setTimeout(showPage, 3000);
 }
 
 function showPage() {
@@ -25,6 +23,7 @@ async function start() {
     const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.6)
     let image
     let canvas
+    document.body.append('Loaded')
     imageUpload.addEventListener('change', async() => {
         if (image) image.remove()
         if (canvas) canvas.remove()
