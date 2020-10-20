@@ -100,24 +100,40 @@
             padding: 8px 12px;
             cursor: pointer;
             border-radius: 4px;
-            background-color: #9c27b0;
+            background-color: red;
             font-size: 16px;
             color: #fff;
         }
-        
-        input[type="file"] {
+        /* input[type="file"] {
             position: absolute;
             z-index: -1;
             top: 6px;
             left: 0;
             font-size: 15px;
             color: rgb(153, 153, 153);
-        }
+        } */
         
         #button-wrap {
             display: none;
             text-align: center;
             position: relative;
+            height: 32px;
+            width: 604px;
+            /* overflow: hidden; */
+            cursor: pointer;
+        }
+        
+        #imageUpload {
+            cursor: pointer;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: 99;
+            font-size: 50px;
+            opacity: 0;
+            -moz-opacity: 0;
+            filter: progid: DXImageTransform.Microsoft.Alpha(opacity=0)
         }
     </style>
 </head>
@@ -125,7 +141,8 @@
 <body onload="myFunction()">
     <div id="loader"></div>
     <div id="button-wrap">
-        <label class="new-button" for="imageUpload"> Upload the Image
+        <label id="new-button" class="new-button" for="imageUpload"> Loading Models</label>
+
         <input type="file" id="imageUpload">
     </div>
 

@@ -23,7 +23,11 @@ async function start() {
     const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.6)
     let image
     let canvas
-    document.body.append('Loaded')
+    const myButton = document.getElementById("new-button");
+    myButton.style.backgroundColor = "green"
+    myButton.innerHTML = "Click here to upload image"
+
+    // document.body.append('Loaded')
     imageUpload.addEventListener('change', async() => {
         if (image) image.remove()
         if (canvas) canvas.remove()
