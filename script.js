@@ -1,5 +1,16 @@
 const imageUpload = document.getElementById('imageUpload')
 
+var myVar;
+
+function myFunction() {
+    myVar = setTimeout(showPage, 3000);
+}
+
+function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("button-wrap").style.display = "block";
+}
+
 Promise.all([
     faceapi.nets.faceRecognitionNet.loadFromUri('/models'),
     faceapi.nets.faceLandmark68Net.loadFromUri('/models'),
@@ -14,7 +25,6 @@ async function start() {
     const faceMatcher = new faceapi.FaceMatcher(labeledFaceDescriptors, 0.6)
     let image
     let canvas
-    document.body.append('Loaded')
     imageUpload.addEventListener('change', async() => {
         if (image) image.remove()
         if (canvas) canvas.remove()
@@ -37,6 +47,7 @@ async function start() {
             })
             drawBox.draw(canvas)
         })
+        faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
     })
 }
 
@@ -46,7 +57,7 @@ function loadLabeledImages() {
         labels.map(async label => {
             const descriptions = []
             for (let i = 1; i < 11; i++) {
-                const img = await faceapi.fetchImage(`https://raw.githubusercontent.com/Purukitto/faceDetection/main/labeled_images/${label}/${i}.jpg`)
+                const img = await faceapi.fetchImage(`https://raw.githubusercontent.com/Purukitto/faceDetection/main/src/${label}/${i}.jpg`)
                 const detections = await faceapi.detectSingleFace(img).withFaceLandmarks().withFaceDescriptor()
                 descriptions.push(detections.descriptor)
             }
