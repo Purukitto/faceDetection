@@ -56,7 +56,7 @@ async function start() {
 }
 
 function loadLabeledImages() {
-    const labels = ['Benedict Cumberbatch', 'Emma Watson', 'Martin Freeman']
+    const labels = ['Benedict Cumberbatch', 'Emma Watson', 'Martin Freeman', 'Pulkit Singh']
     return Promise.all(
         labels.map(async label => {
             const descriptions = []
