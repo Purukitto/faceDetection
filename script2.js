@@ -53,7 +53,7 @@ video.addEventListener('play', async() => {
 
 
 function loadLabeledImages() {
-    const labels = ['Benedict Cumberbatch', 'Emma Watson', 'Martin Freeman']
+    const labels = ['Pulkit Singh']
     return Promise.all(
         labels.map(async label => {
             const descriptions = []
