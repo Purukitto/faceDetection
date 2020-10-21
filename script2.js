@@ -48,8 +48,6 @@ video.addEventListener('play', async() => {
             drawBox.draw(canvas)
         })
         faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
-            // faceapi.draw.drawDetections(canvas, resizedDetections)
-            // faceapi.draw.drawFaceLandmarks(canvas, resizedDetections)
     }, 100)
 })
 
