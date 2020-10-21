@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script defer src="face-api.min.js"></script>
-    <script defer src="script.js"></script>
-    <title>Face Recognition | Image</title>
+    <script defer src="script2.js"></script>
+    <title>Face Recognition | Webcam</title>
     <style>
         body {
             background-color: #12232E;
@@ -176,15 +176,12 @@
 
 <body onload="myFunction()">
     <div class="topnav">
-        <a class="active" href="">Image</a>
-        <a href="/webcam.html">Webcam</a>
+        <a href="">Image</a>
+        <a class="active" href="/webcam.html">Webcam</a>
     </div>
     <div id="content">
         <div id="loader"></div>
-        <div id="button-wrap">
-            <label id="new-button" class="new-button" for="imageUpload"> Loading Models</label>
-            <input type="file" id="imageUpload">
-        </div>
+        <video id="video" width="720" height="560" autoplay muted></video>
     </div>
 
 </body>
